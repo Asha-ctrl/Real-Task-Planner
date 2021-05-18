@@ -1,0 +1,12 @@
+.card {border: solid;
+border color: blue;}
+* { box-sizing: border-box
+}
+h1 { text-align: center;}
+
+h2 {text-align: right:
+    left: -20px;}
+#tasklist {
+    border-style: solid;
+    border-color: lightskyblue;
+}
