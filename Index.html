@@ -22,7 +22,7 @@
   <br>
   <h2>Add Task</h2>
   <div class="container">
-<form class="row"></form>
+<form id="newtask">
     <div></div> 
     <div></div>
     <div class="row">
@@ -41,15 +41,14 @@
         <div class="row">
             <div class="col-md-6">
             <label type="text">Description</label>
-          <input type="text" class="form-control" placeholder="Description" aria-label="Description">
+          <textarea type="text" class="form-control" placeholder="Description" aria-label="Description"></textarea>
         </div>
         </div>
     </div>
-    
-      <form method="post">
-        <div class="form-group"> <!-- Date input -->
+<!-- Date input -->
+        <div class="form-group"> 
           <label class="control-label" for="date">Due Date</label>
-          <input class="form-control" id="date" name="Due Date" placeholder="MM/DD/YYY" type="text"/>
+          <input class="form-control" id="duedate" name="Due Date" placeholder="MM/DD/YYY" type="date"/>
         </div>
     </form>
 
@@ -71,107 +70,143 @@
 
       <div class="form-group"> <!-- Submit button -->
         <button class="btn btn-primary " name="submit" type="submit">Submit</button>
+    </form>
       </div>
     </div>
 </div>
       <br>
       <br>
+      <!--Task Card List-->
+
       <h2>Task List</h2>
       <br>
       <br>
       <!--list group-->
-      <div class="accordion" id="accordionExample">
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingOne">
+      <div class="container">
+      <div class="accordion" id="tasklist">
+        <div class="list-item">
+          <h2 class="accordian-header" id="taskone">
             <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-              Task 1
+              Attend Meeting
             </button>
           </h2>
           <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
             <div class="accordion-body">
                 <div class="Tasks" style="width: 18rem;">
                     <div class="Task-body">
-                      <h5 class="Task Name">Task 1</h5>
-                      <h6 class="card-subtitle mb-2 text-muted">Assigned To</h6>
-                      <p class="Description">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                      <a href="#" class="card-link">Status</a>
+                      <h5 class="Task Name">Meeting</h5>
+                      <h6 class="card-subtitle mb-2 text-muted">Assigned to: Loren</h6>
+                      <br>
+                      <p class="Description">Meeting with Jane in tht conference room.</p>
+                      <h7>Due Date: 18/05/2021</h7>
+                      <div></div>
+                      <br>
+                      <button href="#" class="card-link">To-do</button>
+                      <br>
+                      <br>
                       <a href="#" class="card-link">Delete</a>
                     </div>
             </div>
           </div>
         </div>
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingTwo">
+        <div class="list-item">
+          <h2 class="accordion-header" id="tasktwo">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-              Task 2
+              Clean Office
             </button>
           </h2>
           <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
             <div class="accordion-body">
                 <div class="Tasks" style="width: 18rem;">
                     <div class="Task-body">
-                      <h5 class="Task Name">Task 1</h5>
-                      <h6 class="card-subtitle mb-2 text-muted">Assigned To</h6>
-                      <p class="Description">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                      <a href="#" class="card-link">Status</a>
+                      <h5 class="Task Name">Clean Office</h5>
+                      <h6 class="card-subtitle mb-2 text-muted">Assigned to:John</h6>
+                      <p class="Description">Vacuum the meeting room and tidy the kitchen.</p>
+                      <h7>Due Date: 16/05/2021</h7>
+                      <div></div>
+                      <br>
+                      <button href="#" class="card-link">Done</button>
+                      <br>
+                      <br>
                       <a href="#" class="card-link">Delete</a>
                     </div>
             </div>
           </div>
         </div>
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingThree">
+        <div class="list-item">
+          <h2 class="accordion-header" id="taskthree">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-              Task 3
+              Order Lunch
             </button>
           </h2>
           <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
             <div class="accordion-body">
                 <div class="Tasks" style="width: 18rem;">
                     <div class="Task-body">
-                      <h5 class="Task Name">Task 1</h5>
+                      <h5 class="Task Name">Order Lunch</h5>
                       <h6 class="card-subtitle mb-2 text-muted">Assigned To</h6>
-                      <p class="Description">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                      <a href="#" class="card-link">Status</a>
-                      <a href="#" class="card-link">Delete</a>
-                    </div>
-                    div class="accordion-item">
-          <h2 class="accordion-header" id="headingThree">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-              Task 4
-            </button>
-          </h2>
-          <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
-            <div class="accordion-body">
-                <div class="Tasks" style="width: 18rem;">
-                    <div class="Task-body">
-                      <h5 class="Task Name">Task 1</h5>
-                      <h6 class="card-subtitle mb-2 text-muted">Assigned To</h6>
-                      <p class="Description">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                      <a href="#" class="card-link">Status</a>
-                      <a href="#" class="card-link">Delete</a>
-                    </div>
-                    div class="accordion-item">
-          <h2 class="accordion-header" id="headingThree">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-              Task 5
-            </button>
-          </h2>
-          <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
-            <div class="accordion-body">
-                <div class="Tasks" style="width: 18rem;">
-                    <div class="Task-body">
-                      <h5 class="Task Name">Task 1</h5>
-                      <h6 class="card-subtitle mb-2 text-muted">Assigned To</h6>
-                      <p class="Description">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                      <a href="#" class="card-link">Status</a>
+                      <p class="Description">Send everyone the menue for their lunch order and deliver it to restaurant</p>
+                      <h7>Due Date: 16/05/2021</h7>
+                      <div></div>
+                      <br>
+                      <button href="#" class="card-link">In-progress</button>
+                      <br>
+                      <br>
                       <a href="#" class="card-link">Delete</a>
                     </div>
             </div>
           </div>
         </div>
       </div>
+      <div class="list-item">
+        <h2 class="accordion-header" id="taskfour">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+            Organise Computer Files
+          </button>
+        </h2>
+        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+              <div class="Tasks" style="width: 18rem;">
+                  <div class="Task-body">
+                    <h5 class="Task Name">Organise Computer Files</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Assigned to: Rose</h6>
+                    <p class="Description">Make sure that all the compuer files are properly labled and organised</p>
+                    <h7>Due Date: 20/05/2021</h7>
+                      <div></div>
+                      <br>
+                      <button href="#" class="card-link">Reviw</button>
+                      <br>
+                      <br>
+                      <a href="#" class="card-link">Delete</a>
+                    </div>
+
+                  <div class="list-item">
+        <h2 class="accordion-header" id="headingfive">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+            Document The Meeting
+          </button>
+        </h2>
+        <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+              <div class="Tasks" style="width: 18rem;">
+                  <div class="Task-body">
+                    <h5 class="Task Name">Task 1</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Assigned to: Sharon</h6>
+                    <p class="Description">Take notes during the meeting and send meeting minutes to everyone.</p>
+                    <h7>Due Date: 20/05/2021</h7>
+                    <div></div>
+                    <br>
+                    <button href="#" class="card-link">Done</button>
+                    <br>
+                    <br>
+                    <a href="#" class="card-link">Delete</a>
+                  </div>
   
       </div>
+      </div>
+      <footer>
+          <br>
+          <br>
+      </footer>
   </body>
 </html>
