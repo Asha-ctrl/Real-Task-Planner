@@ -45,8 +45,7 @@ form.addEventListener("submit", (event) => {
     validateAssignedTo.classList.remove("is-valid");
     validationFail++;
   }  
-  // Form validation for Due Date Field not empty
-  // try your own validation for a date in the future
+  
   if (validateDueDate.value) {
     validateDueDate.classList.add("is-valid");
     validateDueDate.classList.remove("is-invalid");
@@ -55,7 +54,7 @@ form.addEventListener("submit", (event) => {
     validateDueDate.classList.remove("is-valid");
     validationFail++;
   }
-  // Form validation for Task Status Field not empty
+  
   if (validateAssignedTo.value) {
     validateAssignedTo.classList.add("is-valid");
     validateAssignedTo.classList.remove("is-invalid");
@@ -64,13 +63,15 @@ form.addEventListener("submit", (event) => {
     validateAssignedTo.classList.remove("is-valid");
     validationFail++;
   }
-  // If validation fails then function will not proceed further and
-  // will return. The value of validationFail will also needed to be
-  // reset to 0.
-  // ----------------------------------------------------------------------------------
+ 
   if (validationFail > 0) {
     validationFail = 0;
     return;
   }
 });
 }
+if (validationFail > 0) {
+  validationFail = 0;
+  return;
+} 
+});
