@@ -26,13 +26,13 @@
   <br>
   <h2>Add Task</h2>
   <div class="container">
-<form id="#new-task-form">
+<form id="new-task-form" action="">
     <div></div> 
     <div></div>
     <div class="row">
         <label type="text">Task Name</label>
         <div class="col-md-6">
-          <input type="text" class="form-control" placeholder="Task Name" aria-label="Task Name" id="#new-task-name" required/>
+          <input type="text" class="form-control" placeholder="Task Name" aria-label="Task Name" id="new-task-name" required/>
           <div>
           </div>
           <div class="valid-feedback">Looks good!</div>
@@ -42,7 +42,7 @@
           <div class="row">
             <label type="text">Assigned To</label>
             <div>
-            <input type="text" class="form-control" placeholder="Assigned To" id="#new-task-assigned-to" required/>
+            <input type="text" class="form-control" placeholder="Assigned To" id="new-task-assigned-to" required/>
           </div>
         </div>
         <div class="valid-feedback">Looks good!</div>
@@ -53,7 +53,7 @@
         <div class="row">
             <div class="col-md-6">
             <label type="text">Description</label>
-          <textarea type="text" class="form-control" placeholder="Description" aria-label="Description" id="#new-task-description" required> </textarea>
+          <textarea type="text" class="form-control" placeholder="Description" aria-label="Description" id="new-task-description" required> </textarea>
         </div>
         </div>
         <div class="invalid-feedback">
@@ -64,20 +64,20 @@
 <!-- Date input -->
         <div class="form-group"> 
           <label class="control-label" for="date">Due Date</label>
-          <input class="form-control" name="Due Date" placeholder="MM/DD/YYY" type="date" id="#new-task-due-date" required/>
+          <input class="form-control" name="Due Date" placeholder="MM/DD/YYY" type="date" id="new-task-due-date" required/>
         </div>
         <div class="valid-feedback">Looks good!</div>
                 <div class="invalid-feedback">
                   Please provide a valid date.
                 </div>
-    </form>
+    
 
         <br>
-       </form>
+       
     <br>
        <div></div>
        <div></div>
-   <select class="Status Select" aria-label="Status" id="#new-task-status">
+   <select class="Status Select" aria-label="Status" id="new-task-status">
         <option selected>Status</option>
         <option value="1">To-do</option>
         <option value="2">In-progress</option>
@@ -87,9 +87,9 @@
   
 <br>
 <br>
-
-      <div class="form-group"> <!-- Submit button -->
-        <button class="btn btn-primary " name="submit" type="submit">Submit</button>
+<!-- Submit button -->
+      <div class="form-group"> 
+        <button class="btn btn-primary " name="submit" type="submit" >Submit</button>
     </form>
       </div>
     </div>
@@ -234,7 +234,7 @@
       crossorigin="anonymous"
     ></script>
   
-      <script src="js/taskManager.js"></script>
-      <script src="js/index.js"></script>
+      <script type= "module" src="js/taskmanager.js"></script>
+      <script type= "module" src="js/index.js"></script>
   </body>
 </html>

@@ -1,15 +1,22 @@
+import {TaskManager} from './taskmanager.js';
 const form = document.querySelector("#new-task-form");
+console.log(form);
+let taskPlanner = new TaskManager ();
+//console.log(taskPlanner)
+//taskPlanner.addTask("Clean office", "Vacuum", "Aisha","12/07/2021","In-Progress");
 
-form.addEventListener("submit", (event) => {
+form.addEventListener('submit', addNewTask);
+function addNewTask(event){
+  console.log("submitbutton")
   const validateName = document.querySelector("#new-task-name");
   const validateDescription = document.querySelector("#new-task-description");
   const validateAssignedTo = document.querySelector("#new-task-assigned-to");
   const validateDueDate = document.querySelector("#new-task-due-date");
   const validateStatus = document.querySelector("#new-task-status");
   let validationFail = 0;
- 
+ console.log(validateName);
   event.preventDefault();
-  event.stopPropagation();
+  //event.stopPropagation();
   console.log("Task Name :" + validateName.value.length);
   console.log("Task Description :" + validateDescription.value.length);
   console.log("Task Assigned To :" + validateAssignedTo.value.length);
@@ -27,6 +34,7 @@ form.addEventListener("submit", (event) => {
   }
 
   // Form validation for Task Description Field min length 5
+  console.log(validateDescription.value.length)
   if (validateDescription.value.length > 5) {
     validateDescription.classList.add("is-valid");
     validateDescription.classList.remove("is-invalid");
@@ -64,14 +72,10 @@ form.addEventListener("submit", (event) => {
     validationFail++;
   }
  
-  if (validationFail > 0) {
-    validationFail = 0;
-    return;
-  }
-});
-}
+
+
 if (validationFail > 0) {
   validationFail = 0;
   return;
 } 
-});
+};
