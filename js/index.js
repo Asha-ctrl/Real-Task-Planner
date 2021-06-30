@@ -1,9 +1,14 @@
 import {TaskManager} from './taskmanager.js';
-const form = document.querySelector("#new-task-form");
-console.log(form);
-let taskPlanner = new TaskManager ();
+//console.log(form);
+let taskManager = new TaskManager ();
 //console.log(taskPlanner)
 //taskPlanner.addTask("Clean office", "Vacuum", "Aisha","12/07/2021","In-Progress");
+// Load the tasks from localStorage
+taskManager.load();
+// Render the loaded tasks to the page
+taskManager.render();
+
+const form = document.querySelector("#new-task-form");
 
 form.addEventListener('submit', addNewTask);
 function addNewTask(event){
@@ -16,6 +21,20 @@ function addNewTask(event){
   let validationFail = 0;
  console.log(validateName);
   event.preventDefault();
+
+  const clearFormFields = () => {
+    validateName.value = "";
+    validateDescription.value = "";
+    validateAssignedTo.value = "";
+    validateStatus.value = "In Progress";
+    validateDueDate.value = "";
+    validateName.classList.remove("is-valid");
+    validateDescription.classList.remove("is-valid");
+    validateAssignedTo.classList.remove("is-valid");
+    validateStatus.classList.remove("is-valid");
+    validateDueDate.classList.remove("is-valid");
+  };
+
   //event.stopPropagation();
   console.log("Task Name :" + validateName.value.length);
   console.log("Task Description :" + validateDescription.value.length);
@@ -77,5 +96,59 @@ function addNewTask(event){
 if (validationFail > 0) {
   validationFail = 0;
   return;
-} 
+} else {
+  // Push the valid input into our tasks array
+  taskManager.addTask(
+    validateName.value,
+    validateDescription.value,
+    validateAssignedTo.value,
+    validateDueDate.value,
+    validateStatus.value
+  );
+  alert(JSON.stringify(taskManager.tasks));
+
+  clearFormFields();
+  taskManager.save();
+  taskManager.render();
+}
 };
+const taskList = document.querySelector("#tasklist");
+// Add an 'onclick' event listener to the Tasks List
+taskList.addEventListener("click", (event) => {
+  // Check if a "Mark As Done" button was clicked
+  if (event.target.classList.contains("done-button")) {
+    // Get the correct parent Task, yours might be slightly different
+    // Use console.log(event.target.parentElement) to see
+    const parentTask =
+      event.target.parentElement.parentElement.parentElement.parentElement;
+    // Get the taskId of the parent Task and turn it into a number.
+    const taskId = Number(parentTask.dataset.taskId);
+    // Get the task from the TaskManager using the taskId
+    const task = taskManager.getTaskById(taskId);
+    // Update the task status to 'DONE'
+    task.status = "Done";
+    taskManager.save();
+    // Render the tasks
+    taskManager.render();
+  }
+
+// Check if a "Delete" button was clicked
+if (event.target.classList.contains("delete-button")) {
+  // Get the parent Task
+  const parentTask =
+    event.target.parentElement.parentElement.parentElement.parentElement;
+
+  // Get the taskId of the parent Task.
+  const taskId = Number(parentTask.dataset.taskId);
+
+  // Delete the task
+  taskManager.deleteTask(taskId);
+
+  // Save the tasks to localStorage
+  taskManager.save();
+
+  // Render the tasks
+  taskManager.render();
+}
+});
+
