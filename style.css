@@ -1,13 +1,84 @@
-.card {border: solid;
-border color: blue;}
-* { box-sizing: border-box
+* {
+    padding: 0;
+    margin: 0;
 }
-h1 { text-align: center;}
+body {
+    background-image: url("images/backgroundpic.jpg");
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover; 
+}
+.btn.btn-primary {
+    border-radius: 10px !important;
+    border-color: #5a43cc;
+    background-color:#ad89e7;
+    color:#ffffff;
+    margin-left: 35%;
+    padding: 1% 10%;
+    
+    
+    
 
-h2 {text-align: right:
-    left: -20px;}
-#tasklist {
-    border-style: solid;
-    border-color: lightskyblue;
+    
+}
+.form-body{
+    background-color: #0f0e06 !important;
+    border-radius: 30px;
+    padding: 10px;
+    border: none; 
+}
+form {
+    background-color: #f8f2e3e8;
+    padding: 10px;
+    border-radius: 20px;
 }
 
+.card-body {
+    background-color: #c4f39d90;
+    border-radius: 30px;
+    padding: 10px;
+    border: none;
+    box-shadow: 0 4px 8px #4d8373(0,0,0,0.2);
+    transition: 0.3s;
+}
+.card-body:hover {
+    box-shadow: 0 8px 16px #26443b(0,0,0,0.2);
+    }
+.card{
+    border-radius: 30px;
+}
+
+
+
+h1 {
+
+    font-weight: bolder;
+    color: #094621;
+    font-size: 2.7em;
+    letter-spacing: 0.15em;
+    padding-left: 37%;
+    padding-top: 5%;
+    
+}
+
+h2{
+    font-weight: bolder;
+    color: #053b1b;
+    font-size: 1.7em;
+    letter-spacing: 0.15em;
+    padding-left: 6.5%;
+    padding-bottom: 1.5%;
+
+}
+h3{
+    font-weight: bolder;
+    color: #410a28;
+    font-size: 1.7em;
+    letter-spacing: 0.15em;
+    padding-left: 6%;
+
+}
+/* Add some padding inside the card container */
+.container {
+padding: 2px 16px;
+}
