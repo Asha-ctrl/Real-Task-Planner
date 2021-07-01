@@ -130,6 +130,9 @@ taskList.addEventListener("click", (event) => {
     taskManager.save();
     // Render the tasks
     taskManager.render();
+    event.target.style.display = "none";
+    event.target.disabled = true 
+    console.log(event.target.classList);
   }
 
 // Check if a "Delete" button was clicked
@@ -149,6 +152,9 @@ if (event.target.classList.contains("delete-button")) {
 
   // Render the tasks
   taskManager.render();
+  
+
+
 }
 });
 

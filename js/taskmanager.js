@@ -5,8 +5,8 @@ const createTaskHTML = (id, name, description, assignedTo, dueDate, status) => {
           <p class="card-text">
               ${description}
           </p>
-          <p class="card-text"> <span class="h5 strong">Assigned to: ${assignedTo}</p>
-          <p class="card-text">Due Date: ${dueDate}</p>
+          <p class="card-text"><span class="h6 strong">Assigned to:</span> ${assignedTo}</p>
+          <p class="card-text"><span class="h6 strong">Due Date: </span> ${dueDate}</p>
           <div class="card-footer row">
               <div class="col-6">
                   <p class="card-text"><b>Status: ${status}</b></p>
